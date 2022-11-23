@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../athletics_website/fallsports"
+		},
+		{
+			"path": "../../../../athletics_website/images"
+		},
+		{
+			"path": "../../../../athletics_website/springsports"
+		},
+		{
+			"path": "../../../../athletics_website/wintersports"
+		}
+	],
+	"settings": {}
+}
