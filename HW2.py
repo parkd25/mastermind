@@ -68,3 +68,5 @@ def findFactors(n):
         if n % i == 0: 
             print(i)
 print(findFactors(n = 12))
+
+
