@@ -18,7 +18,6 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import DropdownList from "react-widgets/DropdownList";
 import NumberPicker from "react-widgets/NumberPicker";
 
 function isSignalSolved(str) {
@@ -29,14 +28,12 @@ function isSignalSolved(str) {
   }
   return true;
 }
-
+const validColors = ["A", "G", "B", "Y", "O", "W"];
 function make_random_code(l) {
-  var items = ["A", "G", "B", "Y", "O", "W"];
   var newItems = [];
-
   for (var i = 0; i < l; i++) {
-    var b = Math.floor(Math.random() * items.length);
-    newItems.push(items[b]);
+    var b = Math.floor(Math.random() * validColors.length);
+    newItems.push(validColors[b]);
   }
   return newItems.join("");
 }
@@ -193,7 +190,11 @@ class Mastermind extends React.Component {
                 onChange={(newguess) => {
                   this.setState({ guess: processGuess(newguess) });
                 }}
-                validChars={"AGBYOWagbyow"}
+                validChars={
+                  validColors.join("").toUpperCase() +
+                  validColors.join("").toLowerCase()
+                }
+                value={this.state.guess}
               ></VerificationInput>
               <ButtonGroup aria-label="small button group">
                 <Button variant="contained" onClick={() => this.onSubmit()}>
@@ -214,6 +215,9 @@ class Mastermind extends React.Component {
                   Restart
                 </Button>
               </ButtonGroup>
+              <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)">
+                Rules on How To Play
+              </a>
               {this.renderHistory()}
               {this.renderSuccessDialog()}
             </Stack>

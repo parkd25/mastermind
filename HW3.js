@@ -1,7 +1,7 @@
 //The purpose is to return a string of length 4. The string will consists of randomly selected letters from an array of 7 different letters.
 
-function make_random_code(items) {
-  var items = ["a", "b", "c", "d", "e", "f", "g"];
+function make_random_code() {
+  var items = ["A", "B", "C", "D", "E", "F", "G"];
   var newItems = [];
 
   for (var i = 0; i < 4; i++) {
@@ -15,17 +15,16 @@ function make_random_code(items) {
 console.log(newItems);
 
 //takes two strings str1 and str2, and returns the number of characters that match both on position and value
-const str1 = "ABA";
-const str2 = "ABB";
-
 function exact_match(str1, str2) {
-  var count = 0;
-  for (let i = 0; i < str1.length; i++) {
-    if (str1[i] == str2[i]) {
-      count++;
-    }
-  }
-  return count;
+const str1 = "ABAA";
+const str2 = "ABBA";
+
+var count = 0;
+for (let i = 0; i < str1.length; i++ ){
+if(str1[i] == str2[i]){
+count++;
+}
+}
 }
 
 // takes two strings and compare how many letters are the same in the two strings
